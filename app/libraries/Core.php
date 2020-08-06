@@ -19,7 +19,7 @@ class Core
             // set as controller
             $this->currentController = ucwords($url[0]);
 
-            // unset 0 index
+            // unset index 0
             unset($url[0]);
         }
 
@@ -28,7 +28,22 @@ class Core
 
         // instantiate controller class
         $this->currentController = new $this->currentController;
+
+        // check for second part of url
+        if (isset($url[1])) {
+            if (method_exists($this->currentController, $url[1])) {
+                $this->currentMethod = $url[1];
+
+                // unset index 1
+                unset($url[1]);
+            }
+        }
+
+        // get parameters
+        $this->params = ($url) ? array_values($url) : [];
+        call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
     }
+
 
     public function getUrl()
     {
