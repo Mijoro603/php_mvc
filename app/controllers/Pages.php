@@ -9,11 +9,14 @@ class Pages extends Controller
 
     public function index()
     {
-        $this->view('this is the index display by view');
+        $data = [
+            'title' => 'welcome'
+        ];
+        $this->view('pages/index', $data);
     }
 
-    public function about($id)
+    public function about()
     {
-        echo "this is about id $id";
+        $this->view('pages/about');
     }
 }
