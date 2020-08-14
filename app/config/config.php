@@ -4,7 +4,7 @@
 define('APP_ROOT', dirname(dirname(__FILE__)));
 
 // url root 
-define('URL_ROOT', ''); // empty due to direct path configuration
+define('URL_ROOT', '/'); // empty due to direct path configuration
 
 // site name
 define('SITE_NAME', 'php mvc');
