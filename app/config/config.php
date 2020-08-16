@@ -14,3 +14,7 @@ define('URL_ROOT', '/'); // empty due to direct path configuration
 
 // site name
 define('SITE_NAME', 'php mvc');
+
+// app version
+define('APP_VERSION', 'b-2.01');
+
