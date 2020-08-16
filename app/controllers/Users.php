@@ -14,21 +14,40 @@ class Users extends Controller
             // process form
         } else {
             // load form
-
             // Init data
             $data = [
                 'name' => '',
                 'email' => '',
                 'password' => '',
                 'confirm_password' => '',
-                'name_err' => '',
-                'email_err' => '',
-                'password_err' => '',
-                'confirm_password_err' => ''
+                'name_error' => '',
+                'email_error' => '',
+                'password_error' => '',
+                'confirm_password_error' => ''
             ];
 
             // Load view
             $this->view('users/register', $data);
+        }
+    }
+
+    public function login()
+    {
+        // Check for POST
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Process form
+        } else {
+            // load form
+            // Init data
+            $data = [
+                'email' => '',
+                'password' => '',
+                'email_error' => '',
+                'password_error' => '',
+            ];
+
+            // Load view
+            $this->view('users/login', $data);
         }
     }
 }
