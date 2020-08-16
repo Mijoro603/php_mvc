@@ -1,4 +1,5 @@
 <?php
+
 // page redirect
 function redirect($page)
 {
