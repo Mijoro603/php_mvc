@@ -40,6 +40,23 @@ class Post
         }
     }
 
+    public function updatePost($data)
+    {
+        $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
+
+        // bind values
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+
+        // execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getPostById($id)
     {
         $this->db->query('SELECT * FROM posts WHERE id = :id');
