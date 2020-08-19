@@ -33,11 +33,7 @@ class Post
         $this->db->bind(':body', $data['body']);
 
         // execute
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($this->db->execute()) ? true : false;
     }
 
     public function updatePost($data)
@@ -50,11 +46,18 @@ class Post
         $this->db->bind(':body', $data['body']);
 
         // execute
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($this->db->execute()) ? true : false;
+    }
+
+    public function deletePost($id)
+    {
+        $this->db->query('DELETE FROM posts WHERE id = :id');
+
+        // bind values
+        $this->db->bind(':id', $id);
+
+        // execute
+        return ($this->db->execute()) ? true : false;
     }
 
     public function getPostById($id)
