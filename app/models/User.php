@@ -53,4 +53,17 @@ class User
     // check row
     return ($this->db->rowCount() > 0) ? true : false;
   }
+
+  // get user by id
+  public function getUserById($id)
+  {
+    $this->db->query('SELECT * FROM users WHERE id = :id');
+
+    // bind value
+    $this->db->bind(':id', $id);
+
+    $row = $this->db->single();
+
+    return $row;
+  }
 }
