@@ -4,7 +4,7 @@
         <h1>Posts</h1>
     </div>
     <div class="col-md-6">
-        <a href="<?php echo URL_ROOT; ?>/posts/add" class="btn btn-primary pull-right">
+        <a href="<?php echo URL_ROOT; ?>posts/add" class="btn btn-primary pull-right">
             <i class="fa fa-pencil"></i> Add Post
         </a>
     </div>
@@ -16,7 +16,7 @@
             Written by <?php echo $post->name; ?> on <?php echo $post->postCreated; ?>
         </div>
         <p class="card-text"><?php echo $post->body; ?></p>
-        <a href="<?php echo URL_ROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
+        <a href="<?php echo URL_ROOT; ?>posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
     </div>
 <?php endforeach; ?>
 <?php require APP_ROOT . '/views/inc/footer.php'; ?>
